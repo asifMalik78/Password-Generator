@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  display: grid;
+  place-items: center;
+}
+
+.wrapper-container {
+  width: 26rem;
+  padding: 1.6rem;
+  border-radius: 0.4rem;
+  background-color: #24232b;
+}
+
+.display-copy-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.display {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+.copy-wrapper {
+  cursor: pointer;
+}
+
+.slider-wrapper {
+  margin-top: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.char-length {
+  font-size: 20px;
+  color: #707070;
+  font-weight: 700;
+}
+
+.length {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+input[type="range"] {
+  position: relative;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  background-color: #141318;
+  border-radius: 1rem;
+  padding: 0;
+  height: 6px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  margin-top: -3px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 6px;
+}
+
+input[type="range"]::-moz-range-track {
+  -moz-appearance: none;
+  height: 6px;
+}
+
+input[type="range"]::-ms-track {
+  appearance: none;
+  height: 6px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-top: -3.4px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 13px;
+  width: 13px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-top: -3.4px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  appearance: none;
+  height: 13px;
+  width: 13px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-top: -3.4px;
+  border: none;
+  cursor: pointer;
+}
+
+.options {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.options-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.options span {
+  font-size: 1rem;
+  color: #707070;
+  font-weight: 700;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: #16161c;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #707070;
+  border-radius: 0.3rem;
+}
+
+input[type="checkbox"]:checked {
+  position: relative;
+  background-color: #2a8b8b;
+  border: none;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\2713";
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+}
+
+.strength-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  background-color: #16161c;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.strength-wrapper .strength {
+  font-size: 1rem;
+  color: #707070;
+  font-weight: 700;
+}
+
+.strength-wrapper .status {
+  font-size: 0.9rem;
+  color: #707070;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.strength-wrapper .strength-icons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.2rem;
+  width: 3rem;
+}
+
+.strength-icons-wrapper .strength-icon {
+  height: 2.7px;
+  background-color: #707070;
+}
+
+.redColor {
+  background-color: #8a0000 !important;
+}
+
+.greenColor {
+  background-color: #46924e !important;
+}
+
+.yellowColor {
+  background-color: #e78b01 !important;
+}
+
+.btn {
+  margin-top: 1.4rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2a8b8b;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
