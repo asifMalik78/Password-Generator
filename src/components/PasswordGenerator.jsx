@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState("");
@@ -98,6 +99,14 @@ export default function PasswordGenerator() {
     generatePassword();
   };
 
+  const copyToClipboardHandler = async () => {
+    
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  }
+
   useEffect(() => {
     generatePassword();
   }, []);
@@ -106,12 +115,17 @@ export default function PasswordGenerator() {
       <div className="wrapper-container">
         <div className="display-copy-wrapper">
           <div className="display">{password}</div>
-          <div className="copy-wrapper">
-            <img
+          <CopyToClipboard text={password}>
+          <div className="copy-wrapper" onClick={copyToClipboardHandler}>
+            {!copied ? <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3MDcwNzAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1maWxlcyI+PHBhdGggZD0iTTE1LjUgMkg4LjZjLS40IDAtLjguMi0xLjEuNS0uMy4zLS41LjctLjUgMS4xdjEyLjhjMCAuNC4yLjguNSAxLjEuMy4zLjcuNSAxLjEuNWg5LjhjLjQgMCAuOC0uMiAxLjEtLjUuMy0uMy41LS43LjUtMS4xVjYuNUwxNS41IDJ6Ii8+PHBhdGggZD0iTTMgNy42djEyLjhjMCAuNC4yLjguNSAxLjEuMy4zLjcuNSAxLjEuNWg5LjgiLz48cGF0aCBkPSJNMTUgMnY1aDUiLz48L3N2Zz4="
               alt="copy-icon"
-            />
+              /> :<img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyYThiOGIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGVjay1jaXJjbGUtMiI+PHBhdGggZD0iTTEyIDIyYzUuNTIzIDAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTB6Ii8+PHBhdGggZD0ibTkgMTIgMiAyIDQtNCIvPjwvc3ZnPg=="
+              alt="copy-icon"
+              /> }
           </div>
+              </CopyToClipboard>
         </div>
         <div className="slider-wrapper">
           <div className="wrapper">
